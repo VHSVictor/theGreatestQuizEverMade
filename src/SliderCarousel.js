@@ -118,7 +118,7 @@ const SliderCarousel = ({questions = [], callCompleteLayout}) => {
               {questions.map((question, index) => { return displayItem(question, index+1)})}
           </Carousel>
           <div style={{display: "flex", justifyContent: "center", alignItems:"center", marginTop: "20px"}}>
-              <Button onClick ={() => callCompleteLayout()}>Concluir</Button>
+              <Button onClick ={() => callCompleteLayout()}>Mostrar Resultado</Button>
           </div>
       </React.Fragment>
     );
