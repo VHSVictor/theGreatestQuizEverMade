@@ -80,27 +80,25 @@ const SliderCarousel = ({questions = [], callCompleteLayout}) => {
 
     const displayItem = (question = {}, index = 0) => {
         const {pergunta = ""} = question || {};
-
-    return (
-        <Carousel.Item>
-        <div style ={{ width:"100%", height:"300px", display:"flex", flexDirection: "column", justifyContent:"center", alignItems:"center", marginBottom:"200px", paddingTop: "120px"}}>
-            <div style ={{display:"flex", justifyContent:"center"}}>
-                {displayQuestionTitle(pergunta)}
-            </div>
-            <React.Fragment>
-            {displayQuestionAnswers(question)}
-            </React.Fragment>
-        </div>
-      <Carousel.Caption>
-        <p>Pergunta {index}</p>
-        <Button onClick ={() => callCompleteLayout()}>Concluir</Button>
-      </Carousel.Caption>
-    </Carousel.Item>
-    )
+        return (
+            <Carousel.Item>
+                <div style ={{ width:"100%", height:"300px", display:"flex", flexDirection: "column", justifyContent:"center", alignItems:"center", marginBottom:"200px", paddingTop: "120px"}}>
+                    <div style ={{display:"flex", justifyContent:"center", marginBottom:"50px"}}>
+                        {displayQuestionTitle(pergunta)}
+                    </div>
+                    <React.Fragment>
+                    {displayQuestionAnswers(question)}
+                    </React.Fragment>
+                </div>
+                <Carousel.Caption>
+                    <p>Pergunta {index}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        )
     };
 
     const displayQuestionTitle = (title = "") => {
-        return <div style ={{width:"50%"}}><h3 style ={{color:"white", fontSize:"20px"}}>{title}</h3></div>
+        return <div style ={{width:"500px", textAlign: "center"}}><h3 style ={{color:"white", fontSize:"20px"}}>{title}</h3></div>
     };
 
     const displayAnswer = (answer = {}, question = {}) => {
@@ -111,15 +109,19 @@ const SliderCarousel = ({questions = [], callCompleteLayout}) => {
 
     const displayQuestionAnswers = (question = []) => {
         const {respostas = {}} = question || {};
-
         return respostas.map(answer => {return displayAnswer(answer, question)});
     };
-
-            return (
-              <Carousel activeIndex={questionIndex} onSelect={handleSelect} slide={false}>
-                  {questions.map((question, index) => { return displayItem(question, index+1)})}
-              </Carousel>
-            );
+    
+    return (
+      <React.Fragment>
+          <Carousel activeIndex={questionIndex} onSelect={handleSelect} slide={true} controls={false} interval={null} indicators={false}>
+              {questions.map((question, index) => { return displayItem(question, index+1)})}
+          </Carousel>
+          <div style={{display: "flex", justifyContent: "center", alignItems:"center", marginTop: "20px"}}>
+              <Button onClick ={() => callCompleteLayout()}>Concluir</Button>
+          </div>
+      </React.Fragment>
+    );
 }
  
 export default SliderCarousel;

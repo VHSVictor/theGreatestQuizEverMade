@@ -61,7 +61,7 @@ const getAnswersQuestions = () => {
         },
         {
             pergunta: "Você costuma pular refeições, caso sim qual o motivo?",
-            respostas:[{resposta: "Sim, costumo pular por questões econômicas", option: RUIM}, {resposta: "Sim, costumo pular por falta de tempo", option: RUIM}, {resposta: "Sim, costumo pular por falta de vontade", option: RUIM}, {respost: "Não, não costumo pular", option: BOM}],
+            respostas:[{resposta: "Sim, costumo pular por questões econômicas", option: RUIM}, {resposta: "Sim, costumo pular por falta de tempo", option: RUIM}, {resposta: "Sim, costumo pular por falta de vontade", option: RUIM}, {resposta: "Não, não costumo pular", option: BOM}],
             tipo: "alimentação"
         },
         {
