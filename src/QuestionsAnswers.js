@@ -36,12 +36,14 @@ const QuestionAnswers = () => {
 
     const showCompleteQuestions = () => {
         const {showFoodVideo = false, showStressVideo = false, showActivityVideo = false} = videosToShow || {};
+        const allOk = !showFoodVideo && !showActivityVideo && !showStressVideo;
 
         return (
             <div style= {{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px", width: "100%"}}>
                 {showFoodVideo && displayYoutubePlayer(foodLink, "Notamos que você precisa dar mais atenção a sua alimentação. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
                 {showStressVideo && displayYoutubePlayer(stressLink, "Notamos que você precisa dar mais atenção ao seu estresse. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
                 {showActivityVideo && displayYoutubePlayer(activityLink, "Notamos que você precisa dar mais atenção as suas atividades físicas. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
+                {allOk && "Parabens você está saudável"}
                 <button onClick={refreshPage}>Recomeçar</button>
             </div>
         );
