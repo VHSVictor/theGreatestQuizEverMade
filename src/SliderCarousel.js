@@ -118,12 +118,12 @@ const SliderCarousel = ({questions = [], callCompleteLayout}) => {
               <Carousel.Item>
                   <div style ={{ width:"100%", height:"300px", display:"flex", flexDirection: "column", justifyContent:"center", alignItems:"center", marginBottom:"200px", paddingTop: "120px"}}>
                       <h3 style={{color:"white", fontSize:"35px"}}>Fim da pesquisa, clique no botão abaixo para mostrar seu resultado!</h3>
+                      <div style={{display: "flex", justifyContent: "center", alignItems:"center", marginTop: "60px", height: "200px"}}>
+                          <Button onClick ={() => callCompleteLayout()}>Mostrar Resultado</Button>
+                      </div>
                   </div>
               </Carousel.Item>
           </Carousel>
-          <div style={{display: "flex", justifyContent: "center", alignItems:"center", marginTop: "20px", marginBottom: "50px", height: "200px"}}>
-              <Button onClick ={() => callCompleteLayout()}>Mostrar Resultado</Button>
-          </div>
       </React.Fragment>
     );
 }
