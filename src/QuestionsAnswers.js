@@ -18,18 +18,31 @@ const QuestionAnswers = () => {
     const stressLink = "https://www.youtube.com/watch?v=TV60yla2Zfg";
     const activityLink = "https://www.youtube.com/watch?v=aQknXgU2iHM";
 
-    const displayYoutubePlayer = (url = "") => {
-        return <ReactPlayer url={url} controls={true}/>;
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
+    const displayYoutubePlayer = (url = "", mensagem = "") => {
+        return(
+            <div>
+                <div style={{maxWidth: "930px", display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", flexDirection: "column", marginBottom: "50px"}}>
+                    <h2 style={{marginBottom: "20px"}}>{mensagem}</h2>
+                    <ReactPlayer url={url} controls={true}/>
+                </div>
+                <hr/>
+            </div>
+        );
     };
 
     const showCompleteQuestions = () => {
         const {showFoodVideo = false, showStressVideo = false, showActivityVideo = false} = videosToShow || {};
 
         return (
-            <div style= {{display: "flex", justifyContent: "center", alignItems: "center", margin: "20px"}}>
-                {showFoodVideo && displayYoutubePlayer(foodLink)}
-                {showStressVideo && displayYoutubePlayer(stressLink)}
-                {showActivityVideo && displayYoutubePlayer(activityLink)}
+            <div style= {{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px", width: "100%"}}>
+                {showFoodVideo && displayYoutubePlayer(foodLink, "Notamos que você precisa dar mais atenção a sua alimentação. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
+                {showStressVideo && displayYoutubePlayer(stressLink, "Notamos que você precisa dar mais atenção ao seu estresse. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
+                {showActivityVideo && displayYoutubePlayer(activityLink, "Notamos que você precisa dar mais atenção as suas atividades físicas. Que tal assistir a um vídeo que fala um pouco mais sobre isso?")}
+                <button onClick={refreshPage}>Recomeçar</button>
             </div>
         );
     };
