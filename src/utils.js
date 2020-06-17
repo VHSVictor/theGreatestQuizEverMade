@@ -26,7 +26,7 @@ const getAnswersQuestions = () => {
         },
         {
             pergunta: "Se você não pratica exercícios físicos regularmente, por que isso acontece? ",
-            respostas:[{resposta: "Eu pratico exercícios físicos regularmente", option: BOM} ,{resposta: "Por questões econômicas (dinheiro)", option:RUIM}, {resposta: "Não tenho tempo (Ruim)", option:RUIM}, {resposta: "Não tenho vontade", option:RUIM}, {resposta : "Outro motivo", option:RUIM}],
+            respostas:[{resposta: "Eu pratico exercícios físicos regularmente", option: BOM} ,{resposta: "Por questões econômicas (dinheiro)", option:RUIM}, {resposta: "Não tenho tempo", option:RUIM}, {resposta: "Não tenho vontade", option:RUIM}, {resposta : "Outro motivo", option:RUIM}],
             tipo: "atividade"
         },
         {
